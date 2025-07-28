@@ -13,7 +13,7 @@ const SupplierDashboard = () => {
 
     const fetchOrders = async () => {
       try {
-        const res = await fetch(`streetfoodhub-backen.onrender.com/api/suppliers/${supplierId}/orders`);
+        const res = await fetch(`https://https://streetfoodhub-backen.onrender.com/api/suppliers/${supplierId}/orders`);
         if (res.ok) {
           const data = await res.json();
           setOrders(
@@ -38,7 +38,7 @@ const SupplierDashboard = () => {
   const updateOrderStatus = async (id, newStatus) => {
     // Update backend first
     try {
-      const res = await fetch(`streetfoodhub-backen.onrender.com/api/suppliers/orders/${id}`, {
+      const res = await fetch(`https://https://streetfoodhub-backen.onrender.com/api/suppliers/orders/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),
@@ -107,7 +107,7 @@ const SupplierDashboard = () => {
 
     try {
       toast.loading("Uploading item...", { id: 'upload' });
-      const res = await fetch(`streetfoodhub-backen.onrender.com/api/suppliers/${supplierId}/items`, {
+      const res = await fetch(`https://https://streetfoodhub-backen.onrender.com/api/suppliers/${supplierId}/items`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(itemData)

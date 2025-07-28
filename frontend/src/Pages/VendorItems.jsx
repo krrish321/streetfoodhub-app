@@ -8,7 +8,7 @@ export default function VendorItems() {
   const { addToCart } = useContext(CartContext);
 
 useEffect(() => {
-  fetch(`streetfoodhub-backen.onrender.com/api/suppliers/${vendorId}`)
+  fetch(`https://https://streetfoodhub-backen.onrender.com/api/suppliers/${vendorId}`)
     .then(res => res.json())
     .then(data => {
       console.log("API DATA", data); // <-- Yahan lagao

@@ -11,7 +11,7 @@ const VendorPage = () => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch(`streetfoodhub-backen.onrender.com/api/suppliers/${id}`)
+    fetch(`https://streetfoodhub-backen.onrender.com/api/suppliers/${id}`)
       .then(res => res.json())
       .then(data => {
         setItems(data.items || []);
@@ -71,7 +71,7 @@ const VendorPage = () => {
     try {
       // Place one order per item (as per your backend)
       for (const cartItem of cart) {
-        const res = await fetch(`streetfoodhub-backen.onrender.com/api/orders`, {
+        const res = await fetch(`https://streetfoodhub-backen.onrender.com/api/orders`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ itemId: cartItem._id })
