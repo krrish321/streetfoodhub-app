@@ -21,7 +21,7 @@ export default function ShopOwnerDashboard() {
 
   // Fetch shop name from backend (not localStorage)
   useEffect(() => {
-    fetch("https://https://streetfoodhub-backen.onrender.com/api/auth/me", {
+    fetch("https://streetfoodhub-backen.onrender.com/api/auth/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
       },
