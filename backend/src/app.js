@@ -16,25 +16,8 @@ const app = express();
 //   credentials: true,
 // }));
 
-// app.use(cors({
-//   origin: "https://streetfoodhub-oi1o89w7u-krrish321s-projects.vercel.app", // actual Vercel URL
-//   credentials: true,
-// }));
-
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://streetfoodhub-app.vercel.app",
-  "https://streetfoodhub-oi1o89w7u-krrish321s-projects.vercel.app"
-];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: "https://streetfoodhub-oi1o89w7u-krrish321s-projects.vercel.app", // actual Vercel URL
   credentials: true,
 }));
 
